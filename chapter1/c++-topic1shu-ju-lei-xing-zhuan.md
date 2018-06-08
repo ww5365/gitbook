@@ -126,11 +126,9 @@ void number_to_string(){
 
 #### 1.3.1 C++ 模式的转换
 
-
-
-![](/assets/test.png)
+![](/assets/1_3_1_pic1.png)
 
 #### 1.3.2 C 模式的转换
 
-![](/assets/31528428915_.pic.jpg)
+![](/assets/1_3_2_pic1.jpg)
 
