@@ -78,7 +78,7 @@ void string_to_number(){
 }
 ```
 
-> **TIPS**
+> **Tips**
 >
 > * 支持c++11的情况：
 >   1、先使用stof得到float值；2、再使用sstringstream，设置精度读入，写出；
@@ -131,7 +131,8 @@ void number_to_string(){
 
 #### 1.3.1 C++ 模式的转换
 ![](/assets/c904395f5e371e87c30a3f27f.jpeg)
- 
+
+![](/assets/test.png)
 #### 1.3.2 C 模式的转换
 
 ![](/assets/31528428915_.pic.jpg)
