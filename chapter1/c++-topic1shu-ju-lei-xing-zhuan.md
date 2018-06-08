@@ -84,15 +84,11 @@ void string_to_number(){
 >   1、先使用stof得到float值；2、再使用sstringstream，设置精度读入，写出；
 > * 不支持C++11： 使用C模式
 
-
-
 ### 1.2 number to string
 
-比如将：12.345 -> "12.345" ,代码示例:
-
+比如将：12.345 -&gt; "12.345" ,代码示例:
 
 ```c++
-
 void number_to_string(){
     float value = 12.3456;
     std::string str2;
@@ -119,20 +115,22 @@ void number_to_string(){
     //C库函数：itoa 不建议使用了
 
 }
-
 ```
 
 > **Tips**
-* 支持：c++11 to_str() 一个函数搞定
-* 不支持的话：使用C/C++的IO方式
-
+>
+> * 支持：c++11 to\_str\(\) 一个函数搞定
+> * 不支持的话：使用C/C++的IO方式
 
 ### 1.3 number 和 string转换总结
 
 #### 1.3.1 C++ 模式的转换
-![](/assets/c904395f5e371e87c30a3f27f.jpeg)
+
+
 
 ![](/assets/test.png)
+
 #### 1.3.2 C 模式的转换
 
 ![](/assets/31528428915_.pic.jpg)
+
