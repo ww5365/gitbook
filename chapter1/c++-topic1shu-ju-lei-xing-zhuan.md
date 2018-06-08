@@ -84,5 +84,5 @@ void string_to_number(){
 >   1、先使用stof得到float值；2、再使用sstringstream，设置精度读入，写出；
 > * 不支持C++11： 使用C模式
 
-
+ 
 
