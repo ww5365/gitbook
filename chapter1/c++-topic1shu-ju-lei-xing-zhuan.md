@@ -132,3 +132,15 @@ void number_to_string(){
 
 ![](/assets/1_3_2_pic1.png)
 
+## 二、 cast 的类型转换
+
+### 2.1 cast 类型转换总结&区别
+
+
+
+
+
+
+
+
+
