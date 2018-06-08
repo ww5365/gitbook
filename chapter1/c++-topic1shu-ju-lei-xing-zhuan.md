@@ -130,5 +130,5 @@ void number_to_string(){
 
 #### 1.3.2 C 模式的转换
 
-![](/assets/1_3_2_pic1.jpg)
+![](/assets/1_3_2_pic1.png)
 
