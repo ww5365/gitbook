@@ -75,9 +75,7 @@ c++升级，统一到头文件：`<limits>`   使用模板类定义实现：`num
     cout << "double bytes: " << sizeof(double) << " rang:"<< numeric_limits<double>::min() << "~" << numeric_limits<double>::max() << " epsilon: " << numeric_limits<double>::epsilon()<< " digits: " <<numeric_limits<double>::digits << endl;
     cout << "long double bytes: " << sizeof(long double) << " rang:"<< numeric_limits<long double>::min() << "~" << numeric_limits<long double>::max() << " epsilon: " << numeric_limits<long double>::epsilon()<< " digits: " <<numeric_limits<long double>::digits << endl;
 
-
-
-
-
-
 ```
+
+* 有无符号数据类型区别代码 看：primer_2_1_2
+* 基本数据类型的字面值常量及转移序列， 看：primer_2_1_3
