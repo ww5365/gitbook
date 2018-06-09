@@ -10,12 +10,12 @@
 | char | 8bit 依赖编译器转成有无符号类型； | %c                                            指定字符编码：u'a'                指定字符串编码：u''test"      转义字符：\,\',\",\?                打印%： %% | 字符串处理topic：                 1、编码转换                           2、中英文判定 |
 | wchar\_t | 至少16bit; 宽字符类型；        c++11升级为基本数据类型；原来是unsigned short 的别名定义； | 宽字符：%C  L'a'                      宽字符串： %S %ls L"test"    读入打印：                             wout/wprintf                          win/wscanf | topic？为什么要增加这个基本的数据类型； |
 | char16\_t | 16bit ;                                      utf-16字符类型 | utf-16的字符：u'a'                  字符串：u"test" |  |
-| char32\_t | 32bit;                                       utf-32字符类型 | 字符：U'a'                                字符串： U"test" | c++11增加了对unicode编码的支持：                              可以参考：[https://blog.poxiao.me/p/unicode-character-encoding-conversion-in-cpp11/\#C++11%E5%AF%B9Unicode%E7%9A%84%E6%94%AF%E6%8C%81](https://blog.poxiao.me/p/unicode-character-encoding-conversion-in-cpp11/#C++11%E5%AF%B9Unicode%E7%9A%84%E6%94%AF%E6%8C%81) |
+| char32\_t | 32bit;                                       utf-32字符类型 | 字符：U'a'                                字符串： U"test" | c++11增加了对unicode编码的支持：                              可以参考：[https://blog.poxiao.me/p/unicode-character-encoding-conversion-in-cpp11/\#C++11%E5%AF%B9Unicode%E7%9A%84%E6%94%AF%E6%8C%81](https://blog.poxiao.me/p/unicode-character-encoding-conversion-in-cpp11/#C++11对Unicode的支持) |
 | short | 16bit；                                  unsigned short | %d %u | uint16\_t |
-| int | 32bit;                                       unsigned int | 10进制：%d %u  10, 10U       16进制：%x   0x10, |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| int | 32bit;                                     unsigned int | 10进制：%d %u  10, 10U       16进制：%x   0x10 | uint32\_t                                  string::size\_type                   std::size\_t                          |
+| long | 32bit;                                      unsigned long | %l                                           %lu |  |
+| long long | 64bit;                                     unsigned long long | %ll                                            %llu |  |
+| float | 32bit:单精度 | %f                                           打印：%m.nf 格式控制 |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
