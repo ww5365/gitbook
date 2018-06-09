@@ -33,12 +33,10 @@ c++升级，统一到头文件：`<limits>`   使用模板类定义实现：`num
 ## 2.3 代码实例
 
 
+ > c++11模板类表示基本数据类型范围
+
 
 ```c++
-
-//`numeric_limits<TYTPE>` c++11模板类表示基本数据类型范围:`<limits>`
-
-
 
     //boolean
     cout << "bool bytes: " << sizeof(bool) << endl;
