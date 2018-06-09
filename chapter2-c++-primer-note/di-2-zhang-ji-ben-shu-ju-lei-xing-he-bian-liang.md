@@ -26,6 +26,6 @@
 c定义头文件：`<limits.h>` `<float.h>`  
 c++升级，统一到头文件：`<limits>`   使用模板类定义实现：`numeric_limits<TYPE>`
 
-汇总如下：参考：
+**汇总如下**：
 
 ![](/assets/2_2_1_pic1.png)
