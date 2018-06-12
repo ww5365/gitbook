@@ -8,7 +8,9 @@
 头文件：`#include <cassert>`
 原型： `void assert(int expersion)` ;实际是宏定义
 
-功能：如果条件为true，继续执行；如果为false，向stderr打印出错信息，并调用abort终止程序；【linux 程序还会抱core】
+功能：
+* 如果条件为true，继续执行；
+* 如果为false，向stderr打印出错信息，并调用abort终止程序；【linux 程序还会抱core】
 
 
 ### 1.2 为什么要用断言？
