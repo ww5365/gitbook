@@ -34,13 +34,10 @@
 
 //实现内存拷贝
 template <class T, class U> 
-
 int bit_copy(T& a, U& b){
-
 assert(sizeof(a) == sizeof(b));//条件不成立，终止；报cor
 e
 memcpy(&a, &b, sizeof(b));
-
 }
 
 ```
@@ -49,7 +46,6 @@ memcpy(&a, &b, sizeof(b));
 一般我们想在编译阶段，就能定位到哪里有问题。在编译阶段能报出错误就好了。c++11提供了static_assert实现了静态断言；
 
 ```c++
-
 template <class T, class U> 
 int bit_copy(T& a, U& b){
 static_assert(sizeof(a) == sizeof(b), "the parameters of bit_copy should have same width");//不成立，抱指定的错误信息；
@@ -59,5 +55,5 @@ memcpy(&a, &b, sizeof(b));
 ```
 
 > 注意
-> static_assert 不能判定变量；因为是编译期间；
+> static_assert 不能判定变量；必须是编译期间的常量，因为是编译期间；
 

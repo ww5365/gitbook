@@ -6,7 +6,8 @@
   * [c++ -topic 2- assert 机制](chapter1/c++-topic-assert-ji-zhi.md)
 * [Chapter2 - c++ primer\_v5 note](chapter2-c++-primer-note.md)
   * [第2章 基本数据类型和变量](chapter2-c++-primer-note/di-2-zhang-ji-ben-shu-ju-lei-xing-he-bian-liang.md)
-* [Chapter3 - leetcode](chapter3-leetcode.md)
+* [Chapter3 - STL](chapter3-stl.md)
+* [Chapter4 - leetcode](chapter3-leetcode.md)
   * [第一章 线性表](chapter3-leetcode/di-yi-zhang-xian-xing-biao.md)
     * [topic1 - LRU](chapter3-leetcode/di-yi-zhang-xian-xing-biao/1-lru.md)
 
