@@ -19,7 +19,9 @@ void string_match_way(){
     test.push_back("beijing university");
     test.push_back("beijing人民");
     /*
-    * std::regex 定义模式匹配的正则表达式；使用字符串初始化
+    * std::regex 定义模式匹配的正则表达式；使用字符串初始化；
+    * std::regex_match 
+    * std::regex_replace
     */
     std::regex pattern("beijing.*");//.匹配任意字符；*匹配之前出现的>=0个字符
     std::regex pattern2("[A-Za-z0-9 ]+");//字母，数字，空格
