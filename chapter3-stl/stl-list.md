@@ -94,14 +94,15 @@ int main ()
 * push_back: 添加元素，从尾部；
 * push_front: 添加元素，在头部；
 
+
 ```c++
+//示例
+
 void push_back( const T& value );
 void push_back( T&& value );//(C++11 起)
 
-1) 初始化新元素为 value 的副本。
-2) 移动 value 进新元素。右值功能？新元素，是使用原来的空间
-
-//示例
+//1) 初始化新元素为 value 的副本。
+//2) 移动 value 进新元素。右值功能？新元素，是使用原来的空间构建；用完后，原来变量值消失；
 
 #include <list>
 #include <iostream>
