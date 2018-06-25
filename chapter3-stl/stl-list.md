@@ -82,7 +82,48 @@ int main ()
 
   return 0;
 }
+```
 
 
+###2.2 添加、移除首位元素
+
+
+* pop_front: 移除首元素 `原型： void pop_front()`
+* pop_back: 移除尾元素 `原型：void pop_back();`
+
+* push_back: 添加元素，从尾部；
+* push_front: 添加元素，在头部；
+
+```c++
+void push_back( const T& value );
+void push_back( T&& value );//(C++11 起)
+
+1) 初始化新元素为 value 的副本。
+2) 移动 value 进新元素。右值功能？新元素，是使用原来的空间
+
+//示例
+
+#include <list>
+#include <iostream>
+#include <iomanip>
+ 
+int main()
+{
+    std::list<std::string> numbers;
+ 
+    numbers.push_back("abc");
+    std::string s = "def";
+    numbers.push_back(std::move(s)); // 函数原型2
+ 
+    std::cout << "list holds: ";
+    for (auto&& i : numbers) std::cout << std::quoted(i) << ' ';
+    //list holds: "abc" "def" 
+    std::cout << "\nMoved-from string holds " << std::quoted(s) << '\n';
+    //Moved-from string holds ""
+}
+ 
+   
 
 ```
+
+
