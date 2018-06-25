@@ -96,7 +96,7 @@ int main ()
 
 
 ```c++
-//示例
+//push_back 示例
 
 void push_back( const T& value );
 void push_back( T&& value );//(C++11 起)
