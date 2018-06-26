@@ -148,3 +148,34 @@ const_reference back() const;
         std::cout << "The first character is: " << letters.front() << '\n';
   }  //输出 o
 ```
+
+
+####2.4 插入元素
+
+
+```c++
+//函数原型：
+//在 pos 前插入 value ，返回插入位置迭代器；
+(1)iterator insert( iterator pos, const T& value );
+   iterator insert( const_iterator pos, const T& value );
+(2)iterator insert( const_iterator pos, T&& value );
+
+//在 pos 前插入 value 的 count 个副本
+(3)void insert( iterator pos, size_type count, const T& value );
+   iterator insert( const_iterator pos, size_type count, const T& value );
+   
+//在 pos 前插入来自范围 [first, last) 的元素
+(4)template< class InputIt >
+   void insert( iterator pos, InputIt first, InputIt last);
+   
+   template< class InputIt >
+   iterator insert( const_iterator pos, InputIt first, InputIt last );
+
+//示例
+
+      
+   
+```
+
+
+
