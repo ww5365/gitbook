@@ -17,7 +17,7 @@ string str2 = str1；//拷贝构造
 string str3（str1); //直接构造
 string str4(10,'c'); //调用构造函数，内容是10个c
 
-string str5(arr,arr+3);//使用数组的前3个字符构造？
+string str5(arr,arr+3);//使用数组的前3个字符构造[begin,end)？
 
 
 ```
