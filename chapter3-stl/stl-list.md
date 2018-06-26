@@ -127,4 +127,24 @@ int main()
 
 ```
 
+#### 2.3 获取首尾元素
 
+
+* 返回到容器中第一/最后一个元素的引用。
+
+```c++
+
+//原型：
+reference front();
+const_reference front() const;
+
+reference back();
+const_reference back() const;
+
+//实例：
+
+ std::list<char> letters {'o', 'm', 'g', 'w', 't', 'f'};    
+ if (!letters.empty()) {
+        std::cout << "The first character is: " << letters.front() << '\n';
+  }  //输出 o
+```
