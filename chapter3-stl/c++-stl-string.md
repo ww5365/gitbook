@@ -30,15 +30,51 @@ string str6.assign(str1.begin(), str1.end());//赋值
 ```c++
 for(auto &e:str){
    
-   e = to_upper(e); //字符变大写
-   
-   e = to_lower(e); //字符变小写
+   e = toupper(e); //字符变大写
+   e = tolower(e); //字符变小写
    
    isalnum(e);//是否是字符或数字字符
+   ispunct(e);//标点符号
+   isalpha(e);//字母
+   islower(e);//是否小写
+   isupper(e);//是否大写
    
-
-     
-
 }
 
 ```
+
+## 四、常见操作
+
+
+###4.1 getline
+
+std::getline 定义在：string中；从输入流中读取一行(遇到换行符)，放到string中；
+
+
+
+```c++
+//原型：
+template< class CharT, class Traits, class Allocator >
+std::basic_istream<CharT,Traits>& getline( std::basic_istream<CharT,Traits>& input,
+                                           std::basic_string<CharT,Traits,Allocator>& str,
+                                           CharT delim );
+                                           
+ /*
+ * 最常用方式：从文件中读取一行数据，并解析；
+ * 
+ */
+ 
+ 
+ ifstream ifs;
+ ifs.open("test.txt");
+ string str1;
+ if(ifs.good()){
+    while(getline(ifs, str1)){
+       cout << "line:" << str1 << endl;
+    }  
+ } 
+ 
+```
+
+
+
