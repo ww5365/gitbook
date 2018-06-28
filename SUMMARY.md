@@ -12,6 +12,7 @@
   * [c++ STL - list](chapter3-stl/stl-list.md)
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
   * [c++ STL - vector](chapter3-stl/c++.md)
+  * [c++  STL - iterator](chapter3-stl/c++-iterator.md)
 * [Chapter4 - leetcode](chapter3-leetcode.md)
   * [第一章 线性表](chapter3-leetcode/di-yi-zhang-xian-xing-biao.md)
     * [topic1 - LRU](chapter3-leetcode/di-yi-zhang-xian-xing-biao/1-lru.md)
