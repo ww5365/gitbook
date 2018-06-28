@@ -41,7 +41,7 @@ template <class ForwardIterator>
 pre：取上一元素位置
 
 
-distance：取两个元素之间的距离
+distance(it1,it2)：取两个元素之间的距离 <=> (it2 - it1)
 
 ```
 
