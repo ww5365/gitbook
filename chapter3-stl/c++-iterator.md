@@ -28,4 +28,12 @@ vector<int>::reverse_iterator rit = vec.rbegin(); //反向迭代器
 
 
 
+## 三、迭代器的操作
 
+```c++
+template <class ForwardIterator>
+  ForwardIterator next (ForwardIterator it,
+       typename iterator_traits<ForwardIterator>::difference_type n = 1);
+       //获取迭代器的下n个位置;默认n=1；
+
+```
