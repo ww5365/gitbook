@@ -21,7 +21,11 @@ vector<int>::reverse_iterator rit = vec.rbegin(); //反向迭代器
 | it-&gt;elem | 等价于：\(\*it\).elem |
 | ++it/--it | 移向迭代器it的下一个或上一个元素 |
 | it1 ！= it2 | 指向同一个元素或同时指向尾后迭代器，相等；否则不相等；必须是指向同一个容器的迭代器； |
-| it1-it2 |  |
+| it1 - it2 | 计算容器中元素之间的间距；返回：differece\_type, 可正，可负； |
+| &gt; ,&gt;=,&lt;,&lt;= | 可以比较大小的；it1在it2之前，it1&gt;it2; |
+|  |  |
+
+
 
 
 
