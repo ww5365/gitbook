@@ -57,7 +57,7 @@ distance(it1,it2)：取两个元素之间的距离 <=> (it2 - it1);返回differe
 
 ```c++
 
-//查找不到情况，返回尾后迭代器
+//查找不到，返回尾后迭代器；
 vector<int>::iterator bin_search(vector<int> &vec, int val){
 
     sort(vec.begin(), vec.end(), Compare());//先排序，升序
