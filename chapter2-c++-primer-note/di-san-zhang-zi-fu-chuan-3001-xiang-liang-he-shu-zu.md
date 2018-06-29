@@ -11,4 +11,6 @@ string 相关点，参考《c++ STL - string》
 vector 向量， 参考《c++ STL - vector》
 
 
-## 3.3 数组
+## 3.3 迭代器
+
+参考《c++ STL - iterator》
