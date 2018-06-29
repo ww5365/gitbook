@@ -41,10 +41,43 @@ template <class ForwardIterator>
 pre：取上一元素位置
 
 
-distance(it1,it2)：取两个元素之间的距离 <=> (it2 - it1)
-
+distance(it1,it2)：取两个元素之间的距离 <=> (it2 - it1);返回difference_type,可正，可负；
 ```
 
 图示：
 
 ![](/assets/3_1.png)
+
+
+## 四、迭代器典型应用
+
+
+
+* 二分查找迭代器版本
+
+```c++
+
+//查找不到情况，返回尾后迭代器
+vector<int>::iterator bin_search(vector<int> &vec, int val){
+
+    sort(vec.begin(), vec.end(), Compare());//先排序，升序
+    vector<int>::iterator start = vec.begin();
+    vector<int>::iterator end = vec.end();
+    while(start != end){//为空的情况也考虑进来了；
+        vector<int>::iterator mid = start + (end - start)/2;//迭代器运算
+        cout << "mid val: " << *mid << endl;
+        if ( *mid == val){
+            return mid;
+        }else if(*mid > val){
+            end = mid;
+        }else{
+            start = mid + 1;
+        }
+    }
+    return vec.end();
+}
+
+```
+
+
+
