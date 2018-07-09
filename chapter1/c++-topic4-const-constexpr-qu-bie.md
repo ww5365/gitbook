@@ -99,7 +99,7 @@ B():name("yizhong"){
   }
 string getName() const{
    return this->name;//this name的值不能修改
-}  
+  }  
   
 }
 
