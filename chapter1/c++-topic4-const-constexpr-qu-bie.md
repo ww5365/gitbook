@@ -55,6 +55,10 @@ private:
 ```c++
 //
 
+const int *ptr[10]; //ptr是数组，保存10个指针，指向整型常量
+int * const ptr[10]; //ptr是数组名，保存了
+const int (*ptr)[10];
+
 
 ```
 
