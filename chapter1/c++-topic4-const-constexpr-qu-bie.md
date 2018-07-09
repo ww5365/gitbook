@@ -56,11 +56,63 @@ private:
 //
 
 const int *ptr[10]; //ptr是数组，保存10个指针，指向整型常量
-int * const ptr[10]; //ptr是数组名，保存了
-const int (*ptr)[10];
+int * const ptr[10]; //ptr是数组名，保存10个常量指针，指向非常量整型
+const int (*ptr)[10];//ptr是指针，指向含有10个整型常量的数组
+
+const int &ref；//const引用则是const Type * const指针
+
+//去掉const性质？ 非const函数调用const函数；
+
+int &A::operator[](int i) {
+    return const_cast<int &>(static_cast<const A &>(*this).operator[](i)); //先加上const，使其能调用到const函数；再去掉const特性；
+}
 
 
 ```
+
+
+### 2.3 类中const
+
+
+
+const 成员变量：static 和 非static
+
+* 非static： 初始化列表中进行初始化
+* static：类内生命；类外初始化；
+
+
+const 成员函数：
+* this指针是双const的；
+* 对成员变量赋值，调用非const函数，调用非const方法，都是不允许的；
+
+```c++
+class B {
+
+private:
+const string name;
+static const int grade;
+
+public:
+
+B():name("yizhong"){
+  name = "yizhong";//error
+  }
+string getName() const{
+   return this->name;//this name的值不能修改
+}  
+  
+}
+
+const int B::grade = 5;
+
+
+```
+
+
+
+
+
+
 
 
 
