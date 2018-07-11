@@ -42,6 +42,11 @@ shared_ptr<string> pvac(&vacation);   //not allowed ,why? stack memory
 
 ```
 
+2.2 为什么设计不同类型的智能指针？
+
+
+
+
 
 ## 参考
 
