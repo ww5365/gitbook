@@ -44,6 +44,8 @@ shared_ptr<string> pvac(&vacation);   //not allowed ,why? stack memory
 
 2.2 为什么设计不同类型的智能指针？
 
+主要使用的两种类型的智能指针：shared_ptr,unique_ptr,
+
 
 
 
