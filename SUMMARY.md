@@ -18,4 +18,6 @@
 * [Chapter4 - leetcode](chapter3-leetcode.md)
   * [第一章 线性表](chapter3-leetcode/di-yi-zhang-xian-xing-biao.md)
     * [topic1 - LRU](chapter3-leetcode/di-yi-zhang-xian-xing-biao/1-lru.md)
+* [Chapter5 - 多线程和网络编程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng.md)
+  * [topic1 - 多线程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic1-duo-xian-cheng.md)
 
