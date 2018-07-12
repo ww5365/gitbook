@@ -44,7 +44,11 @@ shared_ptr<string> pvac(&vacation);   //not allowed ,why? stack memory
 
 2.2 为什么设计不同类型的智能指针？
 
-主要使用的两种类型的智能指针：shared_ptr,unique_ptr,
+主要使用的两种类型的智能指针：shared_ptr,unique_ptr;为什么有不同类型？多个指针可以指向同一个对象，但对象只能delete一次;怎么控制被多次释放，就形成不同的类型智能指针；
+
+shared_ptr:是通过计数器来实现delete；当引用计数器为0时，才释放内存；
+
+unique_ptr:是通过转移控制权来实现只能"主"指针才能释放内存；比如，ptr2 = ptr1，那么控制权就由ptr1转移到ptr2上，ptr1消失(函数返回的临时值，这样是好的，编译不报错)，或者悬空(不好的，编译报错)；只有ptr2才能释放；
 
 
 
