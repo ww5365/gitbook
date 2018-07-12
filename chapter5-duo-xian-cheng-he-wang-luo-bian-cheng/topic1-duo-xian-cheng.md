@@ -11,6 +11,8 @@ pthread_create
 
 pthread_join
 
+pthread_detach
+
 pthread_exit
 
 pthread_mutex_t
