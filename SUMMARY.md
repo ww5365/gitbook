@@ -10,6 +10,7 @@
 * [Chapter2 - c++ primer\_v5 note](chapter2-c++-primer-note.md)
   * [第2章 基本数据类型和变量](chapter2-c++-primer-note/di-2-zhang-ji-ben-shu-ju-lei-xing-he-bian-liang.md)
   * [第3章 字符串、向量和数组](chapter2-c++-primer-note/di-san-zhang-zi-fu-chuan-3001-xiang-liang-he-shu-zu.md)
+  * [第4章运算符](chapter2-c++-primer-note/di-4-zhang-yun-suan-fu.md)
 * [Chapter3 - STL](chapter3-stl.md)
   * [c++ STL - list](chapter3-stl/stl-list.md)
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
