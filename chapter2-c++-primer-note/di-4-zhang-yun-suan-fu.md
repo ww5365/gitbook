@@ -60,3 +60,14 @@ auto identifier ( argument-declarations... ) -> return_type
 
 
 
+
+
+
+
+----
+参考：
+1、decltype介绍，参考：https://www.cnblogs.com/QG-whz/p/4952980.html
+
+
+
+
