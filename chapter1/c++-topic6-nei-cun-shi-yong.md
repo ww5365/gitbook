@@ -36,7 +36,7 @@ delete root;
 
 
 /*
- * 问题2：
+ * 问题2：这个问题带出了，为什么需要智能指针？
 */
 
 string *str = new string("wang");
