@@ -36,8 +36,12 @@ delete root;
 
 
 /*
- 问题2：
+ * 问题2：
 */
+
+string *str = new string("wang");
+
+map<int,string*> s
 
 
 
