@@ -16,9 +16,12 @@
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
   * [c++ STL - vector](chapter3-stl/c++.md)
   * [c++  STL - iterator](chapter3-stl/c++-iterator.md)
+  * [c++ STL - set](chapter3-stl/c++-stl-set.md)
 * [Chapter4 - leetcode](chapter3-leetcode.md)
   * [第一章 线性表](chapter3-leetcode/di-yi-zhang-xian-xing-biao.md)
     * [topic1 - LRU](chapter3-leetcode/di-yi-zhang-xian-xing-biao/1-lru.md)
 * [Chapter5 - 多线程和网络编程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng.md)
   * [topic1 - 多线程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic1-duo-xian-cheng.md)
+* [Chapter6 - 算法和经典代码赏析](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi.md)
+  * [topic 1 - Trie树及实现](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi/topic-1-trieshu-ji-shi-xian.md)
 
