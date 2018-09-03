@@ -4,12 +4,20 @@
 ## 内存释放？
 
 
-类成员数据使用结构体，同时结构体中使用了stl的map，set这些容器。如果使用delete直接释放类成员的结构体数据，set，map里面的数据会被自动释放掉吗？
+类成员数据使用结构体，同时结构体中放在stl的map，set这些容器。如果使用delete作用于容器，能直接释放set，map里面的new的数据吗？
 
 ```c++
 struct Node{
 
 }
+
+class Tree{
+
+private:
+   Node *root;
+}
+
+
 
 
 
