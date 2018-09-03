@@ -18,7 +18,7 @@ struct DistrictInfo
 
     bool operator< (const DistrictInfo &right) const{
         if ((this->cid == right.cid) && (this->level == right.level)){
-            return false; //返回false,去重
+            return false; //返回false,去重；>=
         }else{
             return true;
         }
