@@ -24,4 +24,4 @@ private:
 ```
 
 
-如果new数据map容器中，如何释放new过的数据？
+如果new数据map容器中，如何释放new过的数据？直接clear。。？
