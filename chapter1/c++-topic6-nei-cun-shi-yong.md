@@ -41,7 +41,11 @@ delete root;
 
 string *str = new string("wang");
 
-map<int,string*> s
+map<int,string*> map_str;
+
+map_str.clear();//能自动释放str指向的内存吗？否
+
+
 
 
 
