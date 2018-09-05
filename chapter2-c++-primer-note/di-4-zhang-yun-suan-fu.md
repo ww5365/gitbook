@@ -120,10 +120,18 @@ int a = 3.14;
   
 ```c++
 
-unsigned long quiz = 17; //检测该无符号长整型，第5 bit是否为0？
-bool res = quiz & (1UL << 4); //先获取无符号字面值常量：1UL<<4 再进行与运算
+    //检测该无符号长整型，第5 bit是否为0？
+    unsigned long quiz = 17; 
+    bool res = quiz & (1UL << 4); //先获取无符号字面值常量：1UL<<4 再进行与运算
 
+    //交换两个整数数，不允许中间变量？如何实现,位运算：swap(a,b) ?
 
+    uint16_t a = 3;
+    uint16_t b = 2;
+
+    a = a^b;
+    b = a^b;//(a^b)^b ->a 赋给 b ；把a交换到b上
+    a = b^a; // a ^(a^b) ->b 赋给a；把b交换到a上
   
 ```  
 
