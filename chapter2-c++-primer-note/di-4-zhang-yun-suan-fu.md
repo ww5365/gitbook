@@ -57,7 +57,7 @@ decltype(anon_s) anon_s_other;//重新使用了没有名称结构体类型，定
 
 ```c++
 /*
-  **decltype最典型的应用场景**
+  ** decltype最典型的应用场景 **
 */
 template <typename _Tx, typename _Ty>
 auto multiply(_Tx x, _Ty y)->decltype(x*y)
