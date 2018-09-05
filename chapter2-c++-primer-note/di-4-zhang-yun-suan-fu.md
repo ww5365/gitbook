@@ -39,7 +39,7 @@ decltype 和 auto 区别：？
 1、decltype与auto关键字一样，用于进行**编译时**类型推导。
 2、类型推导：auto是从变量声明的初始化表达式获得变量的类型；decltype是以一个普通表达式作为参数，返回该表达式的类型,而且并不会对表达式进行求值。
 
-### 应用场景
+##### 应用场景
 
 * 重用匿名类型
 
@@ -56,7 +56,7 @@ decltype(anon_s) anon_s_other;//重新使用了没有名称结构体类型，定
 * 泛型编程结合auto，追踪函数的返回值类型
 
 ```c++
-//decltype最典型的应用场景
+//**decltype最典型的应用场景**
 
 template <typename _Tx, typename _Ty>
 auto multiply(_Tx x, _Ty y)->decltype(x*y)
@@ -76,14 +76,7 @@ auto identifier ( argument-declarations... ) -> return_type
 
 ```
 
-
-
-
-
-
-
-----
-参考：
+##### 参考：
 1、decltype介绍，参考：https://www.cnblogs.com/QG-whz/p/4952980.html
 
 
