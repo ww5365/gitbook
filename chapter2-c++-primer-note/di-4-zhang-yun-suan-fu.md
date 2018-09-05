@@ -18,11 +18,6 @@
 这个topic值得关注一下；因为左值和右值，使用decltype时，得到的结果不同；所以引出了对decltype使用的思考，如下。
 
 
-
-
-
-
-
 #### decltype 
 
 ##### 基本说明
@@ -79,6 +74,13 @@ auto identifier ( argument-declarations... ) -> return_type
 
 ##### 参考：
 1、decltype介绍，参考：https://www.cnblogs.com/QG-whz/p/4952980.html
+
+
+
+
+## 4.2 算术运算符
+
+
 
 
 
