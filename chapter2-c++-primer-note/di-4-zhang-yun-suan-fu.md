@@ -18,10 +18,11 @@
 这个topic值得关注一下；因为左值和右值，使用decltype时，得到的结果不同；所以引出了对decltype使用的思考，如下。
 
 ```
+
 int *p;
 decltype(*p);//得到什么类型？decltype作用于表达式且其求值结果是左值，得到值结果的引用
-
-decltype(&x): //表达式且是右值，
+int x；
+decltype(&x) : //表达式且是右值？定义的变量类型为？ int**；
 
 ```
 
