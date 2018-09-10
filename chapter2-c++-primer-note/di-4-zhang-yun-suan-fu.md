@@ -17,6 +17,7 @@
 
 这个topic值得关注一下；因为左值和右值，使用decltype时，得到的结果不同；所以引出了对decltype使用的思考，如下。
 
+declytype()
 
 #### decltype 
 
