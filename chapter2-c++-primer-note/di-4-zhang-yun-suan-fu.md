@@ -19,7 +19,7 @@
 
 ```
 int *p;
-decltype(*p);//得到什么类型？作用于
+decltype(*p);//得到什么类型？decltype作用于表达式，
 
 ```
 
