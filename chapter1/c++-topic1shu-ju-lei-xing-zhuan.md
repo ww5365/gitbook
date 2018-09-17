@@ -213,6 +213,9 @@ string& fun(string&str1, string& str2){
 
 RTTI：run time type identifier
 
+转换的时机：运行期间
+只能针对：指针类型和引用类型；
+要求： 同基类，继承类；
 
 
 
