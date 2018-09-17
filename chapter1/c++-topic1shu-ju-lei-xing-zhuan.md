@@ -187,16 +187,32 @@ string& fun(string&str1, string& str2){
 
 ### 2.3 reinterpret_cast
 
-认为是对static_cast的补充，可以实现下面的转换：
+对二进制位重新解释；认为是对static_cast的补充，可以实现下面的转换：
 
 * int -》 指针
 * 具体的不同类型的指针之间的转换
 
 
+```c++
 
+    //将 char* 转换为 float*, 这样挺危险
+    char str[]="http://c.biancheng.net";
+    float *p1 = reinterpret_cast<float*>(str);
+    cout<<*p1<<endl;
+    //将 int 转换为 int*
+    int *p = reinterpret_cast<int*>(100);
+    //将 A* 转换为 int* ，可以访问到类A中第一个private成员，假设也是int;这样直接破坏了封装性
+    p = reinterpret_cast<int*>(new A(25, 96));
+    cout<<*p<<endl;
+
+
+```
 
 
 ### 2.4 dynamic_cast
+
+RTTI：run time type identifier
+
 
 
 
