@@ -162,7 +162,10 @@ void number_to_string(){
 ###2.2 const_cast
 
 
-对于const/volatile
+对于const/volatile变量，要转成非const/volatile怎么办？
+
+
+* 
 
 
 
