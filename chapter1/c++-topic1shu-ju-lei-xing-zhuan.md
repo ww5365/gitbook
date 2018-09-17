@@ -162,10 +162,35 @@ void number_to_string(){
 ###2.2 const_cast
 
 
-对于const/volatile变量，要转成非const/volatile怎么办？
+对于const/volatile变量，要转成非const/volatile怎么办？ 使用const_cast,改变变量的属性。
+
+典型应用场景：函数重载？
+
+```c++
+const string& fun(const string& str1, const string& str2){
+
+    return str1.size() < str2.size() ? str1: str2;
+    //返回长度小的字符串；但如果传入参数是两个非const的string，返回的是const的引用
+    //这种情况，如何返回非const的引用? 重载函数
+}
+
+string& fun(string&str1, string& str2){
+
+    const string &result = fun(const_cast<const string&>(str1), const_cast<const string&>(str2));
+    //这样用是安全的，string& -> const string&
+
+    return const_cast<string&>(result);
+}
 
 
-* 
+```
+
+### 2.3 reinterpret_cast
+
+
+
+
+### 2.4 dynamic_cast
 
 
 
