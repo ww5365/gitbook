@@ -159,6 +159,12 @@ void number_to_string(){
 ```
 
 
+###2.2 const_cast
+
+
+对于const/volatile
+
+
 
 
 
