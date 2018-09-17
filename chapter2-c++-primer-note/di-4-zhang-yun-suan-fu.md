@@ -122,7 +122,7 @@ int a = 3.14;
 &： 位与    &=  
 \|:  位或   \|=  
 ^:  位异或  ^=  
-~:  位取反   
+~:  位取反  
 `<<`: 左移  
 `>>`: 右移
 
@@ -152,9 +152,12 @@ int a = 3.14;
 
 |  |  |
 | :--- | :--- |
-|  |  |
+| static\_cast&lt;TYPE&gt;\(表达式\) |  |
+| const\_cast&lt;TYPE&gt;\(表达式\) |  |
+| dynamic\_cast&lt;TYPE&gt;\(表达式\) |  |
+| reinterpret\_cast&lt;TYPE&gt;\(表达式\) |  |
 
 
 
-
+详细使用，请参考：《》
 
