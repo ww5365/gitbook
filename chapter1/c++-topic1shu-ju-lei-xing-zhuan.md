@@ -229,7 +229,25 @@ base *b_ptr = dynamic_cast<base*>(ptr);
 
 * 向下转换 (父类指针 -》 子类)
 
-是否安全，要看父类指针原本指向？父类指针就是父类对象，不安全；父类指针实际指向子类的
+是否安全，要看父类指针原本指向？父类指针就是父类对象，不安全；父类指针实际指向子类的对象，转换安全；
+
+
+``` c++
+
+    template<typename ResourceType>
+    ResourceType* GetCastResource(const std::string& resource_name) {
+        Resource* resource = GetResource(resource_name);//resource父类指针指向子类对象
+        if (NULL == resource) {
+            return NULL;
+        }
+
+        return dynamic_cast<ResourceType*>(resource);//返回想要的子类对象指针
+    }
+    
+    
+    
+
+```
 
 
 
