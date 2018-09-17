@@ -215,9 +215,17 @@ RTTI：run time type identifier
 
 转换的时机：运行期间
 只能针对：指针类型和引用类型；
-要求： 同基类，继承类；
+要求： 同基类，继承类；基类中有虚函数；
+
+* 向上转换 （子类-》父类)
 
 
+```c++
+
+derived *ptr = new derived();//安全
+base *b_ptr = dynamic_cast<base*>(ptr);
+
+```
 
 
 
