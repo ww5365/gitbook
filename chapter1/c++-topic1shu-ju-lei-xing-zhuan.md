@@ -136,6 +136,27 @@ void number_to_string(){
 
 ### 2.1 static_cast
 
+数据转换发生阶段：编译阶段
+
+* void指针和其它指针类型指针之间的转换；
+* 不能去掉表达式中const和volatile修饰，也就是不能将上面类型的变量转换成非const/volatile类型；
+
+```c++
+
+    //下面是正确的用法
+    int m = 100;
+    Complex c(12.5, 23.8);
+    long n = static_cast<long>(m);  //宽转换，没有信息丢失
+    char ch = static_cast<char>(m);  //窄转换，可能会丢失信息
+    int *p1 = static_cast<int*>( malloc(10 * sizeof(int)) );//将void指针转换为具体类型指针
+    void *p2 = static_cast<void*>(p1);  //将具体类型指针，转换为void指针
+    double real= static_cast<double>(c);  //调用类型转换函数
+   
+    //下面的用法是错误的
+    float *p3 = static_cast<float*>(p1);  //不能在两个具体类型的指针之间进行转换
+    p3 = static_cast<float*>(0X2DF9);  //不能将整数转换为指针类型
+
+```
 
 
 
