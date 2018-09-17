@@ -211,7 +211,9 @@ string& fun(string&str1, string& str2){
 
 ### 2.4 dynamic_cast
 
-RTTI：run time type identifier
+RTTI：run time type identifier  
+  * typeid(表达式) ：返回表达式类型
+  * dynamic_cast
 
 转换的时机：运行期间
 只能针对：指针类型和引用类型；
