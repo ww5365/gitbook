@@ -187,6 +187,12 @@ string& fun(string&str1, string& str2){
 
 ### 2.3 reinterpret_cast
 
+认为是对static_cast的补充，可以实现下面的转换：
+
+* int -》 指针
+* 具体的不同类型的指针之间的转换
+
+
 
 
 
