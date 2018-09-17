@@ -217,7 +217,7 @@ RTTI：run time type identifier
 
 转换的时机：运行期间
 只能针对：指针类型和引用类型；
-要求： 同基类，继承类；基类中有虚函数；
+要求： 同基类，继承类；基类中有虚函数
 
 * 向上转换 (子类-》父类)
 
@@ -231,14 +231,14 @@ base *b_ptr = dynamic_cast<base*>(ptr);
 
 * 向下转换 (父类指针 -》 子类)
 
-是否安全，要看父类指针原本指向？父类指针就是父类对象，不安全；父类指针实际指向子类的对象，转换安全；
+是否安全，要看父类指针原本指向？父类指针就是父类对象，不安全，抛出异常std::bad_cast；父类指针实际指向子类的对象，转换安全；
 
 
 ``` c++
 
     template<typename ResourceType>
     ResourceType* GetCastResource(const std::string& resource_name) {
-        Resource* resource = GetResource(resource_name);//resource父类指针指向子类对象
+        Resource* resource = GetResource(resource_name);//resource基类指针指向继承类对象
         if (NULL == resource) {
             return NULL;
         }
@@ -246,8 +246,10 @@ base *b_ptr = dynamic_cast<base*>(ptr);
         return dynamic_cast<ResourceType*>(resource);//返回想要的子类对象指针
     }
     
-    
-    
+    //使用类中的模板函数
+    TestClass test;
+    test.GetCastResource<Derived>("testDict");
+
 
 ```
 
