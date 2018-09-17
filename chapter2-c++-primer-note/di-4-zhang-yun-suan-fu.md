@@ -157,7 +157,5 @@ int a = 3.14;
 | dynamic\_cast&lt;TYPE&gt;\(表达式\) |  |
 | reinterpret\_cast&lt;TYPE&gt;\(表达式\) |  |
 
-
-
-详细使用，请参考：《》
+详细使用，请参考：Chapter1 - c++点点滴滴《topic1 数据类型转换》
 
