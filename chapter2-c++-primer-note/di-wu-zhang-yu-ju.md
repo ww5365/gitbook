@@ -11,7 +11,14 @@ do while
 
 ### 范围for语句
 
-`for(declare:expression)`
+`for(declaration:expression)`
+
+适用条件：
+
+* expression必须是一个序列： 使用花括号初始化，数组，vector， string 等； 
+* 
+
+declare: 
 
 
 ```c++
