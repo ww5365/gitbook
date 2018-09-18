@@ -18,11 +18,28 @@ do while
 
 
 ```c++
-
 vetor<int> v = {1,2,3,4};
-
 for(auto &e:v){
    e = 2*e;//每个元素都乘以2
 }
+```
+
+
+## 5.5 跳转语句
+
+break
+continue
+return
+goto
+
+### goto语句
+
+```c++
+
+goto LABLE;
+
+LABLE:  //名称
+  statement
+
 
 ```
