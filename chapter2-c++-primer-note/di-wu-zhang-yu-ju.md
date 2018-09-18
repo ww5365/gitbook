@@ -38,8 +38,32 @@ goto
 
 goto LABLE;
 
-LABLE:  //名称
-  statement
+LABLE:  //label独立于变量命名和其它标识符的命名；也就是说可以和变量名相同
+  do something statement;
+
+```
+
+
+## 5.6 异常处理语句
+
+常用的异常处理：
+
+std::runtime_error
+
+
+```c++
+
+
+try{
+  if(ture){
+     cout << "some exception" << endl;
+     throw std::runtime_error("wangwei runtime error test"); //使用throw 直接抛出特定的异常
+  }
+}catch(){
+}catch(){
+}catch(...){
+}
 
 
 ```
+
