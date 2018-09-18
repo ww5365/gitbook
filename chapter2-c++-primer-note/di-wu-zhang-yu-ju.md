@@ -13,15 +13,16 @@ do while
 
 `for(declaration:expression)`
 
-适用条件：
-
-* expression必须是一个序列： 使用花括号初始化，数组，vector， string 等； 
-* 
-
-declare: 
+* expression必须是一个序列： 使用花括号初始化，数组，vector， string 等；也就说这种类型有迭代器：begin和end
+* declaration: 序列中的元素类型，也可以用auto；如果需要修改expression中的内容，使用引用。 
 
 
 ```c++
 
+vetor<int> v = {1,2,3,4};
+
+for(auto &e:v){
+   e = 2*e;//每个元素都乘以2
+}
 
 ```
