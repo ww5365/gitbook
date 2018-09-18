@@ -11,7 +11,7 @@ do while
 
 ### 范围for语句
 
-`for(de)`
+`for(declare:expression)`
 
 
 ```c++
