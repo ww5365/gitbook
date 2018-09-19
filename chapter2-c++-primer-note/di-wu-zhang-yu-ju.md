@@ -59,25 +59,29 @@ LABLE:  //label独立于变量命名和其它标识符的命名；也就是说�
 
 std::exception : 最通用的异常类，只报告异常的发生，不提供额外信息
 
-#
+#include <new>
+
+std::bad_alloc : new内存分配失败，抛出此异常
+
+#include<type_info>
+
+std::bad_cast : 强制数据类型转换失败
 
 #include <stdexcept>
 std::runtime_error :程序运行时检测出来的问题
-std::out_of_range
-
-
-
-
+std::out_of_range  :逻辑错误，使用了超出有效范围的值
 
 
 try{
   if(ture){
      cout << "some exception" << endl;
-     throw std::runtime_error("wangwei runtime error test"); //使用throw 直接抛出特定的异常
+     throw std::runtime_error("wangwei runtime error test"); //使用throw 直接抛出运行时的异常对象；括号内的是初始化提示字符串；
   }
-}catch(){
-}catch(){
-}catch(...){
+}catch(std::runtime_error e){
+     cout << "message:" << e.what() << endl;
+}catch(std::exception e2){
+     cout << "message:" << e2.what() << endl;
+}catch(...){//不知类型的异常，直接默认处理
 }
 
 
