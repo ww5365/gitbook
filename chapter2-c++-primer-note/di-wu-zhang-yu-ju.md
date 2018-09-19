@@ -48,13 +48,26 @@ LABLE:  //label独立于变量命名和其它标识符的命名；也就是说�
 
 ## 5.6 异常处理语句
 
-常用的异常处理：
 
-#include<>
-std::runtime_error
 
 
 ```c++
+
+常用的异常处理：
+
+#include<excpetion>
+
+std::exception : 最通用的异常类，只报告异常的发生，不提供额外信息
+
+#
+
+#include <stdexcept>
+std::runtime_error :程序运行时检测出来的问题
+std::out_of_range
+
+
+
+
 
 
 try{
