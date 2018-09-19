@@ -34,6 +34,8 @@ goto
 
 ### goto语句
 
+主要关注了LABLE的命名规则；它和变量不是一个体系，可以和变量重名；
+
 ```c++
 
 goto LABLE;
@@ -48,6 +50,7 @@ LABLE:  //label独立于变量命名和其它标识符的命名；也就是说�
 
 常用的异常处理：
 
+#include<>
 std::runtime_error
 
 
