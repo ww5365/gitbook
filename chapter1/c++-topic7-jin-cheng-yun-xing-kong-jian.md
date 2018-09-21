@@ -13,7 +13,6 @@ linux-64bit机器为例：
 * 地址64bit,标识范围：0x0000000000000000 ~ 0xFFFFFFFFFFFFFFFF
 
 * text segment: 代码段
-
 二进制代码；从虚拟内存地址00400000开始，这个地址是固定的。使用pmap PID可以查看到；
 
 * data segment:
