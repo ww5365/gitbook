@@ -63,12 +63,10 @@ int main(){
    
    int ta = 10;
    int tb = 15;
-   
    int *ptr = new int;
-   
    *ptr = sum(ta,tb);
    
-   cout << "sum:"
+   cout << "sum:" << *ptr << endl;
 }
 
 
