@@ -49,6 +49,31 @@ maps文件格式：该文件有6列分别为：
 
 ## 7.2 代码汇编后实例分析运行空间
 
+```c++
+
+int g_test = 1;
+
+int g_test2;
+
+int sum(int a, int b){
+    return a+b;
+}
+
+int main(){
+   
+   int ta = 10;
+   int tb = 15;
+   
+   int *ptr = new int;
+   
+   *ptr = sum(ta,tb);
+   
+   cout << "sum:"
+}
+
+
+```
+
 
 ## 7.3 函数调用运行进制
 
