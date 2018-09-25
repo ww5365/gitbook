@@ -33,7 +33,7 @@ c动态内存分配函数：malloc alloc  free
 * stack 段：
 函数局部变量，函数调用等都保存在stack区，地址由高到低的分配内存；
 
-* 使用pmap PID 或 cat /proc/PID/maps 查看进程空间:
+* 使用pmap PID 或 cat /proc/PID/maps 查看进程空间:<br>
 maps文件格式：
 地址：库在进程里地址范围 
 权限：虚拟内存的权限，r=读，w=写,x=,s=共享,p=私有； 
