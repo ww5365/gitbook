@@ -154,7 +154,7 @@ int main(void) {
 ``` x86asm
 main:
 .LFB3:
-	pushq	%rbp  #主函数栈帧指针压栈；刚进子函数必做的事情;main也是某个函数的子函数；
+	pushq	%rbp  #主函数栈帧指针压栈；被调函数必做的事情;main也是某个函数的子函数；
 .LCFI2:
 	movq	%rsp, %rbp  #创建子函数栈帧；起始地址；必做；
 .LCFI3:
@@ -164,7 +164,7 @@ main:
 	movl	$20, -8(%rbp)  # 同上，对应代码：j = 20;
 	movl	-8(%rbp), %eax 
 	addl	-4(%rbp), %eax # 进行加法运算，同时把结果存放再%rax中
-	movl	%eax, -12(%rbp) # 这一步验证了%rax是caller save 寄存器；再调用子函数前将结果压栈
+	movl	%eax, -12(%rbp) # 这一步验证了%rax是caller save 寄存器；在调用子函数前将结果压栈
 	movl	$88, 8(%rsp) # 第8个参数压栈，使用%rsp上面的第8个空间
 	movl	$77, (%rsp)  
 	movl	$66, %r9d    # 小于6个参数压栈进入寄存器
@@ -173,15 +173,47 @@ main:
 	movl	$33, %edx
 	movl	$22, %esi
 	movl	$11, %edi
-	call	add        #调用子函数add
+	call	add        #调用子函数add：保存调用函数返回地址，病进入到子函数
 	movl	%eax, -16(%rbp)  #将add函数的返回值%eax保存到栈中；int sum = add(...)
 	movl	-12(%rbp), %eax  #将调用add之前，保存的 k= i+j的结果，恢复
 	movl	%eax, -20(%rbp)  #对应源码：int m = k 命令； 
 	movl	$0, %eax  # return 0；所以返回值要置为0；返回到上一个主函数
 	leave  # 恢复主函数栈帧；rbp，rsp
-	ret    # 返回并跳转到主函数指令
+	ret    # 返回并跳转到主函数调用处下一条指令处，继续执行
 
 ```
+add函数分析：
+
+``` x86asm
+
+add:
+.LFB2:
+	pushq	%rbp  #主函数栈帧指针压栈；刚进子函数必做的事情
+.LCFI0:
+	movq	%rsp, %rbp  #子函数栈帧起始地址赋值；必做；
+.LCFI1:
+	movl	%edi, -4(%rbp)  # 将参数入栈；这种操作，相当于push %edi，(%rsp)
+	movl	%esi, -8(%rbp)  # 由于子程序中可能会用到参数的内存地址，这些参数放在寄存器中是无法取地址的，这里把参数压栈，印证了我们之前的猜想:寄存器中的参数，也要入栈的。
+	movl	%edx, -12(%rbp)
+	movl	%ecx, -16(%rbp)
+	movl	%r8d, -20(%rbp)
+	movl	%r9d, -24(%rbp)
+	movl	-8(%rbp), %eax
+	addl	-4(%rbp), %eax  
+	addl	-12(%rbp), %eax
+	addl	-16(%rbp), %eax
+	addl	-20(%rbp), %eax
+	addl	-24(%rbp), %eax
+	addl	16(%rbp), %eax  #取第7个参数；为什么是16(%rbp)？ 参考下面的解释
+	addl	24(%rbp), %eax
+	movl	%eax, -28(%rbp) # sum=a+b+c...
+	movl	-28(%rbp), %eax
+	leave
+	ret
+
+```
+
+
 
 
 
