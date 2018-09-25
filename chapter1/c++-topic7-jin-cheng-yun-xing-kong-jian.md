@@ -226,8 +226,6 @@ add:
 ![](/assets/1_7_6.png)
 
 
-
-
 ## Reference
 1、http://blog.chinaunix.net/uid-27119491-id-3325943.html 
    《x86-64 进程地址空间》同时参考：
