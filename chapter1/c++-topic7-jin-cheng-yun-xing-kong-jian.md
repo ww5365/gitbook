@@ -145,6 +145,8 @@ int main(void) {
 }
 
 ```
+2、汇编代码分析
+
 查看汇编代码： 
 （1） gcc -S test.c -o test.s
 （2） gdb test_bin -> disassemble 函数名  gdb的反汇编功能
