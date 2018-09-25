@@ -151,7 +151,7 @@ int main(void) {
 （1） gcc -S test.c -o test.s
 （2） gdb test_bin -> disassemble 函数名  gdb的反汇编功能
 
-上面test.c的汇编代码分析：
+* main代码分析：
 
 ``` x86asm
 main:
@@ -184,7 +184,8 @@ main:
 	ret    # 返回并跳转到主函数调用处下一条指令处，继续执行
 
 ```
-add函数分析：
+
+* add函数分析：
 
 ``` x86asm
 
