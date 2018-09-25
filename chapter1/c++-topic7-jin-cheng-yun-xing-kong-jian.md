@@ -81,8 +81,9 @@ maps文件格式：该文件有6列分别为：
 
 
 * 函数调用时发生的一系列动作?
+
 调用者：参数从右向左依次压栈 -》 函数返回地址(函数名)压栈 -》跳转到子函数的首地址执行代码 -》 
-被调用者： 上一个函数栈帧rbp指针压栈 -》同时修改当前栈帧指针为当前地址 -》 继续执行子函数
+被调用者： **上一个函数栈帧rbp指针压栈** -》同时修改当前栈帧指针为当前地址 -》 继续执行子函数
 汇编代码示例：
 
 ```
@@ -97,14 +98,106 @@ subq  $N, %rsp  # 在新栈帧中预留一些空位，供子程序使用，用 (
 
 ```
 
+* 函数返回？
 
-
-* 函数返回动作？
 思考:当函数调用结束，如何恢复调用者函数栈空间，并进行执行？
 
+1、rbp-》rsp： 也就是栈顶指针恢复到rbp处
+2、rsp中的内容 -》上一个rbp：利用栈顶指针中的内容，恢复调用函数rbp
+3、%rsp此时指向返回地址，取出来，调用函数继续执行；参数由编译器自动释放；
+
+上面的过程，实际对应的指令leave和ret：
+
+leave 指令：恢复主函数的栈帧; 执行完后，%rsp正好指向，主函数返回地址处；%rbp指向主函数栈帧起始位置；
+
+分解出来实现代码：
+
+``` 
+movq %rbp, %rsp    # 使 %rsp 和 %rbp 指向同一位置，即子栈帧的起始处
+popq %rbp # 将栈中保存的父栈帧的 %rbp 的值赋值给 %rbp，并且 %rsp 上移一个位置指向父栈帧的结尾处
+
+```
+ret 指令： %rsp指向返回地址取出，跳到返回地址处，继续执行主函数指令； 调用参数由编译器自动释放；
+
+* 函数返回值
+
+函数返回值保存在：%rax 
 
 
-## 7.4 常用汇编命令及寄存器
+## 7.3.2 函数调用实例分析
+
+* 示例代码：test.c
+
+```c++
+
+int add(int a, int b, int c, int d, int e, int f, int g, int h) { // 8 个参数相加
+  int sum = a + b + c + d + e + f + g + h;
+  return sum;
+}
+
+int main(void) {
+  int i = 10;
+  int j = 20;
+  int k = i + j; 
+  int sum = add(11, 22,33, 44, 55, 66, 77, 88);
+  int m = k; // 为了观察 %rax Caller Save 寄存器的恢复
+  return 0;
+}
+
+```
+查看汇编代码： 
+（1） gcc -S test.c -o test.s
+（2） gdb test_bin -> disassemble 函数名  gdb的反汇编功能
+
+上面test.c的汇编代码分析：
+
+``` x86asm
+main:
+.LFB3:
+	pushq	%rbp  #主函数栈帧指针压栈；刚进子函数必做的事情;main也是某个函数的子函数；
+.LCFI2:
+	movq	%rsp, %rbp  #创建子函数栈帧；起始地址；必做；
+.LCFI3:
+	subq	$40, %rsp  #栈帧分配40bytes空间；减法；栈是向下生长
+.LCFI4:
+	movl	$10, -4(%rbp)  # 立即数+ 基址寻址：将10 -》(*(%rbp)-4)
+	movl	$20, -8(%rbp)  # 同上，对应代码：j = 20;
+	movl	-8(%rbp), %eax 
+	addl	-4(%rbp), %eax # 进行加法运算，同时把结果存放再%rax中
+	movl	%eax, -12(%rbp) # 这一步验证了%rax是caller save 寄存器；再调用子函数前将结果压栈
+	movl	$88, 8(%rsp) # 第8个参数压栈，使用%rsp上面的第8个空间
+	movl	$77, (%rsp)  
+	movl	$66, %r9d    # 小于6个参数压栈进入寄存器
+	movl	$55, %r8d
+	movl	$44, %ecx
+	movl	$33, %edx
+	movl	$22, %esi
+	movl	$11, %edi
+	call	add        #调用子函数add
+	movl	%eax, -16(%rbp)  #将add函数的返回值%eax保存到栈中；int sum = add(...)
+	movl	-12(%rbp), %eax  #将调用add之前，保存的 k= i+j的结果，恢复
+	movl	%eax, -20(%rbp)  #对应源码：int m = k 命令； 
+	movl	$0, %eax  # return 0；所以返回值要置为0；返回到上一个主函数
+	leave  # 恢复主函数栈帧；rbp，rsp
+	ret    # 返回并跳转到主函数指令
+
+```
+
+
+
+
+
 
 
 ## 7.5 代码函数debug调试
+
+
+
+
+## Reference
+1、http://blog.chinaunix.net/uid-27119491-id-3325943.html 
+   《x86-64 进程地址空间》同时参考：
+    Chapter 15 - The Process Address Space, Linux kernel development.3rd.Edition
+    
+2、http://blog.csdn.net/lqt641/article/details/73002566
+  《x86-64 下函数调用及栈帧原理》这篇文章参考的多
