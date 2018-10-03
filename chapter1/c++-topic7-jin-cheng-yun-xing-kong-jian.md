@@ -164,7 +164,7 @@ main:
 	movl	$33, %edx
 	movl	$22, %esi
 	movl	$11, %edi
-	call	add        #调用子函数add：保存调用函数返回地址，病进入到子函数
+	call	add        #调用子函数add：保存调用函数返回地址，并进入到子函数
 	movl	%eax, -16(%rbp)  #将add函数的返回值%eax保存到栈中；int sum = add(...)
 	movl	-12(%rbp), %eax  #将调用add之前，保存的 k= i+j的结果，恢复
 	movl	%eax, -20(%rbp)  #对应源码：int m = k 命令； 
