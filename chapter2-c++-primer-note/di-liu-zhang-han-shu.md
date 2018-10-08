@@ -77,7 +77,7 @@ void sum_int(const int len,...){ //计算整型参数的和,长度可变
 void print_msg(char *buf,const char *format,...){
     va_list va_par;
     va_start(va_par,format);
-    vsnprintf(buf,256,format,va_par);  //专门格式化打印va_list变量
+    vsnprintf(buf,256,format,va_par);  //专门格式化打印va_list这种变量类型
     va_end(va_par);
 }
 
