@@ -14,6 +14,7 @@
   * [第3章 字符串、向量和数组](chapter2-c++-primer-note/di-san-zhang-zi-fu-chuan-3001-xiang-liang-he-shu-zu.md)
   * [第4章 运算符、表达式](chapter2-c++-primer-note/di-4-zhang-yun-suan-fu.md)
   * [第5章 语句](chapter2-c++-primer-note/di-wu-zhang-yu-ju.md)
+  * [第六章 函数](chapter2-c++-primer-note/di-liu-zhang-han-shu.md)
 * [Chapter3 - STL](chapter3-stl.md)
   * [c++ STL - list](chapter3-stl/stl-list.md)
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
