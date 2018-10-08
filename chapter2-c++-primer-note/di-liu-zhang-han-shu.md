@@ -92,6 +92,10 @@ void print_msg(char *buf,const char *format,...){
  > 2、参数类型检查： 有  无
  
   
+  
+  
+## reference
+  
 
 
 
