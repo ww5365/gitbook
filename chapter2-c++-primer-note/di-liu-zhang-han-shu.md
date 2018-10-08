@@ -24,9 +24,38 @@
 
 ```c++
 
+/*
+* c++11 新增加：
+* 头文件：initializer_list
+* 调用：
+* error_msg(code,{"this", "error1"});
+* error_msg(code,{"this", "error1", "error2"});
+*/
 
-可变参数的函数定义：
-int sum_int(const int len , ...) //省略号
+void error_msg(int &err_code, std::initializer_list<std::string> para){
+
+    //initializer_list 是模板类
+    for(auto it = para.begin(); it != para.end(); it++){
+        std::cout << "para: " << *it << std::endl;
+    }
+
+    //这个类支持迭代器，所以也可以用范围for
+    for(auto &e: para){
+        std::cout << "para2: " << e << std::endl;
+    }
+    err_code = 0;
+}
+
+/*
+* c支持的可变参数：include<stdarg.h>
+* 函数定义：
+* int sum_int(const int len , ...) //省略号
+* 使用
+
+
+*/
+
+可变参数的
 
 怎么使用可变的参数？
 
