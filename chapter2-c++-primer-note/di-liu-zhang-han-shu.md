@@ -47,17 +47,40 @@ void error_msg(int &err_code, std::initializer_list<std::string> para){
 }
 
 /*
-* c支持的可变参数：include<stdarg.h>
+* c支持的可变参数：include <stdarg.h>
 * 函数定义：
 * int sum_int(const int len , ...) //省略号
-* 使用
-
-
+* 利用的接口：
+  va_list p;
+  va_start(p,length);
+  va_arg(p,参数的数据类型);
+  va_end(p);
+* 本质是一系列的宏定义；根据进程运行空间，参数的分布情况，计算出各个参数的地址；参数从右向左入栈，所以高地址->低地址：第n个->第1个参数；
 */
+void sum_int(const int len,...){ //计算整型参数的和,长度可变
 
-可变参数的
+    va_list para;
+    va_start(para,len); //para 指向第一可变参数的起始位置
+    int para_value = va_arg(para,int);  //获取第一个int类型参数的值； 注意va_arg的第二个参数是数据类型：int
 
-怎么使用可变的参数？
+    std::cout << "param:" << 1 << ": "<<para_value <<std::endl;
+
+    for (int i = 1 ;i < len;i++){
+        para_value = va_arg(para,int);
+        std::cout << "param:" << i+1 << ": "<<para_value <<std::endl;
+    }
+    va_end(para);
+}
+
+//vsnprintf打印va_list变量，进而能打印出可变参数,结果放在buf;
+
+void print_msg(char *buf,const char *format,...){
+    va_list va_par;
+    va_start(va_par,format);
+    vsnprintf(buf,256,format,va_par);  //专门格式化打印va_list变量
+    va_end(va_par);
+}
+
 
 
 
