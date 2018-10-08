@@ -80,11 +80,10 @@ void print_msg(char *buf,const char *format,...){
     vsnprintf(buf,256,format,va_par);  //专门格式化打印va_list这种变量类型
     va_end(va_par);
 }
-
-
-
-
 ```
+
+
+## 6.4 
 
 
 
