@@ -91,6 +91,7 @@ void print_msg(char *buf,const char *format,...){
 
 int (*ptr_arr)[10]; //ptr_arr是指向整形数组的指针，如何返回这种类型？
 
+auto fun() -> int (*) [10]
 
 
 ```
