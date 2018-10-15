@@ -96,7 +96,7 @@ int (*fun(int len)) [10]
 {
 //动态分配3*10二维数组，返回第二行数组
 
-int **ptr = new (*int)[3];
+int **ptr = new int* [3];
 
 for(i=0;i<3;i++){
   ptr[i] = new int[10];
