@@ -91,21 +91,24 @@ void print_msg(char *buf,const char *format,...){
 
 int (*ptr_arr)[10]; //ptr_arr是指向整形数组的指针，如何返回这种类型？
 
-
+// 函数定义，返回类型特殊，让它看起来很怪
 int (*fun(int len)) [10]
 {
 //动态分配3*10二维数组，返回第二行数组
 
-int *ptr = new int[3];
+int **ptr = new (*int)[3];
 
+for(i=0;i<3;i++){
+  ptr[i] = new int[10];
+  }
 
-
+return &ptr[1];  
 }
 
 //c++11 支持尾置的返回数据类型
 auto fun() -> int (*) [10]
 {
-  
+  ..
 }
 
 
