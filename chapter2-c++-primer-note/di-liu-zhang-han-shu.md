@@ -91,7 +91,22 @@ void print_msg(char *buf,const char *format,...){
 
 int (*ptr_arr)[10]; //ptr_arr是指向整形数组的指针，如何返回这种类型？
 
+
+int (*fun(int len)) [10]
+{
+//动态分配3*10二维数组，返回第二行数组
+
+int *ptr = new int[3];
+
+
+
+}
+
+//c++11 支持尾置的返回数据类型
 auto fun() -> int (*) [10]
+{
+  
+}
 
 
 ```
