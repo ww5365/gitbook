@@ -96,19 +96,24 @@ int (*fun(int len)) [10]
 {
 //动态分配3*10二维数组，返回第二行数组
 
-int **ptr = new int* [3];
-
-for(i=0;i<3;i++){
-  ptr[i] = new int[10];
-  }
-
-return &ptr[1];  
+ 
 }
 
 //c++11 支持尾置的返回数据类型
 auto fun() -> int (*) [10]
 {
-  ..
+   //分配二维数组内存空间
+   int **ptr2 = new int*[3];
+   for(int i = 0; i < 3; i++){
+      ptr2[i] = new int[10];
+   }
+    //强制类型转换，不做的话，编译要报错
+   int (*ptr)[10] = reinterpret_cast<int(*)[10]>(ptr2[1]);
+   
+   for (int i = 0; i< 10;i++){
+       *ptr[i] = i + 1;
+   }
+   return ptr;  
 }
 
 
