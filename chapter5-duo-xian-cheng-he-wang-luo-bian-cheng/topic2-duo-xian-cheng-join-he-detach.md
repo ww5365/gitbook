@@ -3,7 +3,9 @@
 
 > 主工作线程，一开始就使用:ul_pthread_detach(ul_pthread_self()),这个是为何？
 
-先给结论：在工作线程函数头加上 pthread_detach(pthread_self())，被创建的工作线程状态改变unjoinable，在pthread_exit线程退出时，回收被线程占用的资源（8K）；
+先给结论：在工作线程函数头加上 pthread_detach(pthread_self())，被创建的工作线程状态改变unjoinable，在pthread_exit线程退出时，回收被线程占用的资源(8K);
+
+
 
 
 原因分析：
