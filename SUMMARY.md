@@ -26,6 +26,7 @@
     * [topic1 - LRU](chapter3-leetcode/di-yi-zhang-xian-xing-biao/1-lru.md)
 * [Chapter5 - 多线程和网络编程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng.md)
   * [topic1 - 多线程](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic1-duo-xian-cheng.md)
+  * [topic2 - 多线程join和detach](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic2-duo-xian-cheng-join-he-detach.md)
 * [Chapter6 - 算法和经典代码赏析](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi.md)
   * [topic 1 - Trie树及实现](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi/topic-1-trieshu-ji-shi-xian.md)
 
