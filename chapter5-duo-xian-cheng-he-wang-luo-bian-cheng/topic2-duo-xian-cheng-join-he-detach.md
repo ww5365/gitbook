@@ -44,6 +44,7 @@ pthread_join(t);//主线程等待线程t退出，并释放t线程所占用的资
 
 
 回到sug-as源码：
+
 子线程中使用了：detach 同时主线程中又使用:join ，怎么理解？ 会报错？但没有报错可能是因为是使用了ul库中ul_pthread_detach。但终究有功能重复；
 
 可以考虑去掉：ul_pthread_detach(ul_pthread_self()) ？ 
