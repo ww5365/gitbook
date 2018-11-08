@@ -10,11 +10,13 @@
 
 Linux系统中程序的线程资源是有限的，表现为能同时运行的线程数是有限的。而默认的条件下，一个线程结束后，其对应的资源不会被释放；可能造成，线程创建形式的"内存泄露";
 
-释放线程占用资源(堆栈和线程描述符)的方法：
+释放线程占用资源(**堆栈和线程描述符**)的方法：
 
-1. detach
+* detach
 
-创建线程时，把子线程设置成detach属性。子线程分离于主线程
+创建线程时，把子线程设置成detach属性,子线程分离于主线程,不阻塞主线程；
+或者在子线程函数开始处使用pthread_detach(pthread_self())；
+将子线程变为unjoinable状态，确保子线程pthread_exit或退出时，资源自动释放;
 
 ```c++
 
@@ -25,19 +27,17 @@ pthread_attr_setdetachstate(&a, PTHREAD_CREATE_DETACHED);//设置线程属性
 pthread_create( &t, &a, Stub, NULL);//建立线程
 
 ```
-或者在子线程函数开始处使用pthread_detach(pthread_self())
 
-将子线程变为unjoinable状态，确保子线程pthread_exit或退出时，资源自动释放
 
-2. join
+* join
 
 ```c++
 
 pthread_t t;
 pthread_create( NULL, NULL, Stub, NULL);
-pthread_join(t);//等待线程t退出，并释放t线程所占用的资源
+pthread_join(t);//主线程等待线程t退出，并释放t线程所占用的资源
 
-````
+```
 
 调用pthread_join()后，如果该线程没有运行结束，调用者会被阻塞。有些情况下我们并不希望如此，比如在Web服务器中当主线程为每个新来的链接创建一个子线程进行处理的时候，主线程并不希望因为调用pthread_join而阻塞，因为还要继续处理之后到来的链接，所以使用pthread_detach(pthread_self()) 
 或者父线程调用pthread_detach(thread_id)（非阻塞，可立即返回），是较好选择；
