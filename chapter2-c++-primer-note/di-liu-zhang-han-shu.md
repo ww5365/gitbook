@@ -126,7 +126,7 @@ int &get(int *arr, int idx){
 
 int arr[10];
 //返回左值
-get(arr, 1) = 11;
+get(arr, 1) = 11; //第2个元素值是11
 
 ```
 
