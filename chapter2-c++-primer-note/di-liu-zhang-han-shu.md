@@ -84,6 +84,8 @@ void print_msg(char *buf,const char *format,...){
 
 ##6.4 函数返回值
 
+###6.4.1 尾置返回值
+
 定义的函数，返回值：一个指向整形数组的指针；
 
 ```c++
@@ -113,6 +115,21 @@ auto fun() -> int (*) [10]
 }
 
 ```
+
+### 6.4.2 返回左值
+
+```c++
+
+int &get(int *arr, int idx){
+    return arr[idx];
+}
+
+int arr[10];
+//返回左值
+get(arr, 1) = 11;
+
+```
+
 
 ## 6.5 函数涉及的特殊语言特性
 
