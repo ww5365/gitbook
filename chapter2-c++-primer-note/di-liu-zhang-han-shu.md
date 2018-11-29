@@ -165,11 +165,18 @@ inline编译器会选择在调用点是否直接展开函数内容，不发生�
  
  int arr[test(1)] ;//没问题啊，常量表达式，有常量的效能。
  
+ const int val2;
+ int arr2[val2];//no，不可以。
+ 
  ```
  
  
-1、常量表示式是不是内联函数 ?
-2、编译阶段就能确定值？？
+1、常量表示式是不是内联函数 ?是
+2、编译阶段就能确定值。
+3、const 和 constexpr 有什么区别？
+* 从现在来看，constexpr 用的少，新加关键字；
+* 能弄明白，const int i; constexpr int i;
+
   
   
 ## Reference
