@@ -175,7 +175,7 @@ inline编译器会选择在调用点是否直接展开函数内容，不发生�
 2、编译阶段就能确定值。
 3、const 和 constexpr 有什么区别？
 * 从现在来看，constexpr 用的少，新加关键字；
-* 能弄明白，const int i; constexpr int i;
+* 能弄明白，const int i; constexpr int i; ?
 
   
   
