@@ -15,6 +15,7 @@
   * [第4章 运算符、表达式](chapter2-c++-primer-note/di-4-zhang-yun-suan-fu.md)
   * [第5章 语句](chapter2-c++-primer-note/di-wu-zhang-yu-ju.md)
   * [第6章 函数](chapter2-c++-primer-note/di-liu-zhang-han-shu.md)
+  * [第7章 类](chapter2-c++-primer-note/di-7-zhang-lei.md)
 * [Chapter3 - STL](chapter3-stl.md)
   * [c++ STL - list](chapter3-stl/stl-list.md)
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
