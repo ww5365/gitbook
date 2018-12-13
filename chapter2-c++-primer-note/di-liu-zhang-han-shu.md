@@ -190,11 +190,47 @@ inline编译器会选择在调用点是否直接展开函数内容，不发生�
 
 ```c++
 
-bool str_cmp(const string &, const string &);//str_cmp是函数类型，也就是说可以定义类型别名，可以定义函数类型指针；
-
 //定义函数类型别名
+typedef bool str_cmp(const std::string &, const std::string &); //定义了str_cmp为此类函数的类型别名
+using str_cmp2 = bool (const std::string &, const std::string&);//使用using定义了函数类型的别名，效果同上；上面的定义更常见；
 
-typedef
+//定义函数类型指针
+typedef bool (*str_cmp_ptr) (const std::string &s1, const std::string &s2);//str_cmp_ptr函数类型指针
+str_cmp2 *str_cmp_ptr2; //使用函数类型别名，来定义函数类型指针
+
+//函数类型指针作为形参来使用
+
+void my_sort(std::vector<int>&,  bool (*str_cmp_ptr)(std::string &, std::string &)); //函数类型指针作为形参，能否简化定义？
+
+void my_sort(std::vector<int>& vec,  str_cmp_ptr fun){ //简化定义，直接使用函数类型指针
+
+    std::cout << "test function pointer as parameters!" << std::endl;
+
+    std::string s1,s2;
+    fun(s1, s2);
+}
+
+//函数指针作为函数返回值来使用
+auto get_fun_ptr() -> bool (*)(const std::string &, const std::string &){
+    str_cmp2 *fun = str_cmp_test;
+    return fun;
+}
+
+decltype(str_cmp_test)* get_fun_ptr2(){
+    //第二种定义方式，使用decltype
+    str_cmp_ptr fun = str_cmp_test;
+    return fun;
+}
+
+void get_fun_ptr_use(){
+
+    std::string s1,s2;
+    std::cout << "test function pointer as return value!" << std::endl;
+    //函数指针作为返回值，并实现调用此函数
+    get_fun_ptr()(s1, s2);
+
+}
+
 
  
 ```
