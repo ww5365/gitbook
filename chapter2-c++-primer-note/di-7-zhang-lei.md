@@ -11,6 +11,7 @@
 问题：常量对象或常量对象的指针，只能访问常量成员函数，为什么？
 
 ```c++
+
 class  Sales_data{
 private:
     std::string isbn;
