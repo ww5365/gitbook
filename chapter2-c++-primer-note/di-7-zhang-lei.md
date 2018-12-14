@@ -54,6 +54,9 @@ sa.getCount();// 常量成员函数，ok
 ## 构造函数
 
 
+constructor function 有什么特征？
+* 函数名和类名同名
+* 无返回值，只有>=0个参数
 
 
 
