@@ -64,3 +64,12 @@ constructor function 有什么特征？
 * 默认构造函数：输入参数=0个；
 
 
+
+```c++
+
+//默认构造函数；同时使用默认值和初始化列表，进行初始化；
+Sales_data():isbn(""),revenue(0.0),units_sold(0){}
+
+
+```
+
