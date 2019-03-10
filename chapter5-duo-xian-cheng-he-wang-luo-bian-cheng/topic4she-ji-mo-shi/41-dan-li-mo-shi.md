@@ -38,6 +38,7 @@ private:
     //构造函数
     DataCenter();
     ~DataCenter();
+    
     // Data center implementation.
     boost::scoped_ptr<DataCenterImpl> m_data_center_pimpl;
     static utility::Mutex m_mutex;
@@ -63,11 +64,31 @@ private:
 
 实现实例二：
 
+class ResourceFrame {
+public:
+    /// 框架初始化
+    /// 主要是初始化各个组件以及一些独立的模块
+    int Initialize(const map_sug_as::conf_info_t& susvr_conf);
+
+    /// 更新资源
+    int UpdateResource();
     ///c++11 单例模式
     static ResourceFrame& Instance() {
         static ResourceFrame _instance;
         return _instance;
     }
+
+private:
+    ResourceFrame(){};
+
+    ~ResourceFrame(){};
+
+    ResourceFrame(const ResourceFrame&) = delete;
+
+    ResourceFrame& operator=(const ResourceFrame&) = delete;
+
+    ResourcesManager m_resources_manager;
+};
 
 
 
