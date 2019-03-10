@@ -10,6 +10,8 @@
 ## 项目中见到的单例
 
 
+
+
 ``` C++
 
 class DataCenter {
