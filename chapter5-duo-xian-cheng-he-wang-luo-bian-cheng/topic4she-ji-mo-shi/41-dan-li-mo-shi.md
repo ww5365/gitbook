@@ -35,22 +35,28 @@ public:
     
 private:
 
+    //构造函数
+    DataCenter();
+    ~DataCenter();
     // Data center implementation.
     boost::scoped_ptr<DataCenterImpl> m_data_center_pimpl;
     static utility::Mutex m_mutex;
     static bool m_is_instance_created;
     static DataCenter* m_instance;
 
-    // uncopyable
+    // uncopyable 拷贝
     DataCenter(const DataCenter&);
-    void operator=(const DataCenter&);
+    DataCenter& operator=(const DataCenter&);
 };
 
 
 上面的实现思考点：
 
-1、要实现单例，使用静态变量？同时，不可构造：构造函数和拷贝构造函数设计成delete/private;
-2、多线程的情况下，需要mutex保护？double check？
+1、要实现单例，使用静态变量？
+2、不可构造：
+   构造函数和拷贝构造函数设计成delete/private;
+
+3、多线程的情况下，需要mutex保护？double check？
    
    自己的理解：如果需要修改单例对象管理的数据，多线的情况下，还是要考虑mutex保护；
 
