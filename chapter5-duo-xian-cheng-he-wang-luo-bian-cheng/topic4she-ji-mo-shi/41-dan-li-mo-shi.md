@@ -10,7 +10,7 @@
 ## 项目中见到的单例
 
 
-```c++
+``` C++
 
 class DataCenter {
 public:
