@@ -14,6 +14,8 @@
 
 ``` C++
 
+实现实例一：
+
 class DataCenter {
 public:
     int Init(const global_conf_t& g_conf);
@@ -49,6 +51,17 @@ private:
 
 1、要实现单例，使用静态成员变量？
 2、多线程的情况下，需要mutex保护？double check？
+
+
+实现实例二：
+
+    ///c++11 单例模式
+    static ResourceFrame& Instance() {
+        static ResourceFrame _instance;
+        return _instance;
+    }
+
+
 
 
 ```
