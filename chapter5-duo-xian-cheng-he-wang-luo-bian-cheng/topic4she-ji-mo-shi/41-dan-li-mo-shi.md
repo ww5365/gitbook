@@ -11,6 +11,7 @@
 
 
 ```c++
+
 class DataCenter {
 public:
     int Init(const global_conf_t& g_conf);
