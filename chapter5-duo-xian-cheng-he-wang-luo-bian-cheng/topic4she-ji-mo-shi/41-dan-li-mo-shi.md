@@ -9,3 +9,39 @@
 
 ## 项目中见到的单例
 
+
+```c++
+class DataCenter {
+public:
+    int Init(const global_conf_t& g_conf);
+
+    // Typical singlton design using double-check.
+    static DataCenter& Instance() {
+        if (!m_is_instance_created) {
+            utility::MutexGuard mutex_guard(&m_mutex);
+            if (!m_is_instance_created) {
+                static DataCenter data_center;
+                m_instance = &data_center;
+                m_is_instance_created = true;
+            }
+        }
+        return *m_instance;
+    }
+private:
+
+    // Data center implementation.
+    boost::scoped_ptr<DataCenterImpl> m_data_center_pimpl;
+    static utility::Mutex m_mutex;
+    static bool m_is_instance_created;
+    static DataCenter* m_instance;
+
+    // uncopyable
+    DataCenter(const DataCenter&);
+    void operator=(const DataCenter&);
+};
+
+
+
+
+```
+
