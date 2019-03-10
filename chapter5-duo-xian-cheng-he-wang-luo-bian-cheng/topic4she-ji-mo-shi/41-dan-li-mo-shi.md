@@ -98,6 +98,7 @@ tips：
 
 1、这个单例的实现，是不是有问题？每次调用ResourceFrame::instance()是不是都会有一个静态成员变量：_instance??
 
+结论：
 
 ```
 
