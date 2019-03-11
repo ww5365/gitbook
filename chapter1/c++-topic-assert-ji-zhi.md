@@ -59,3 +59,26 @@ memcpy(&a, &b, sizeof(b));
 > 注意
 > static_assert 不能判定变量；必须是编译期间的常量，因为是编译期间；
 
+
+### 1.5 扩展 和 abort，exit区别？
+
+
+abort : 
+头文件 stdlib.h
+功能：异常终止一个进程;
+
+原型：void abort(void)
+
+
+exit :
+
+头文件  stdlib.h
+
+void exit(int status)
+
+exit()用来正常终结目前进程的执行,并把参数 status 返回给父进程,而进程中所有的缓冲区数据会自动写回并关闭未关闭的文件。
+它并不像abort那样不做任何清理工作就退出，而是在完成所有的清理工作后才退出程序
+
+
+
+
