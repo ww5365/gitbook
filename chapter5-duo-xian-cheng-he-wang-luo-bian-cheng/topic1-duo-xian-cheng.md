@@ -25,13 +25,16 @@ pthread_mutex_unlock
 
 ## pthread_t
 
-定义线程数据类型：主要有线程id
+定义线程数据类型：主要是线程id
 
 pthread_t tids[10];
 
+一般作为参数传入pthread_create;
 
 
 ## pthread_create
+
+原型：`int pthread_create(pthread_t *t, const pthread_attr_t *a, void*(*f)(void *)fun, void *fun_pram) `
 
 
 
