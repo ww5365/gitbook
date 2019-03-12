@@ -34,8 +34,18 @@ pthread_t tids[10];
 
 ## pthread_create
 
-原型：`int pthread_create(pthread_t *t, const pthread_attr_t *a, void*(*f)(void *)fun, void *fun_pram) `
+原型：`int pthread_create(pthread_t * restrict t, const pthread_attr_t *a, void*(*f)(void *)fun, void * restrict fun_pram) `
 
+返回值： 0 成功，否则出错
+
+参数：
+第一个参数为指向线程标识符的指针。
+
+　　第二个参数用来设置线程属性。
+
+　　第三个参数是线程运行函数的地址。
+
+　　最后一个参数是运行函数的参数。
 
 
 
