@@ -54,7 +54,8 @@ if (pthread_create(&m_threadid, NULL, ThreadRun, m_handle.get()) != 0) {
     fprintf(stderr, "Fail to %s thread", m_name.c_str());
 }
 
-//这个线程创建的手法，有什么不一样？ 把回调函数的指针作为参数，传递给桩函数；
+这个线程创建的手法，有什么不一样？ 
+把回调函数的指针作为参数，传递给桩函数；
 好处：？实际运行是回调函数，同时，回调函数还能在类中进行设置；因为一般桩函数都是static的独立的函数：static void* fun(void *)
 
 ```
