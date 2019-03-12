@@ -50,8 +50,8 @@ pthread_t tids[10];
 
 ``` c++
 if (pthread_create(&m_threadid, NULL, ThreadRun, m_handle.get()) != 0) {
-m_started = false;
-fprintf(stderr, "Fail to %s thread", m_name.c_str());
+    m_started = false;
+    fprintf(stderr, "Fail to %s thread", m_name.c_str());
 }
 
 //这个线程创建的手法，有什么不一样？ 把回调函数的指针作为参数，传递给桩函数；
