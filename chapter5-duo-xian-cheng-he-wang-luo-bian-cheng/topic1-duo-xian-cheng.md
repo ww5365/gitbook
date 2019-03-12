@@ -23,6 +23,20 @@ pthread_mutex_unlock
 
 
 
+## pthread_t
+
+定义线程数据类型：主要有线程id
+
+pthread_t tids[10];
+
+
+
+## pthread_create
+
+
+
+
+
 ## pthread_exit
 
 `void pthread_exit(void *);`
@@ -31,6 +45,9 @@ pthread_mutex_unlock
 
 main()中调用了pthread_exit后，导致主线程提前退出，其后的exit()无法执行了，所以要到其他线程全部执行完了，整个进程才会退出。
 
+
+
+## 
 
 
 
