@@ -15,6 +15,8 @@ pthread_detach
 
 pthread_exit
 
+pthread_self
+
 pthread_mutex_t
 
 pthread_mutex_lock
