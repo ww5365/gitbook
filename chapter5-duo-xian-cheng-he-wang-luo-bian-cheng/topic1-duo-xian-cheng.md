@@ -75,6 +75,10 @@ if (pthread_create(&m_threadid, NULL, ThreadRun, m_handle.get()) != 0) {
 
 ```
 
+## pthread_join
+
+`int pthread_join(pthread_t, void **)`
+
 
 ## pthread_exit
 
