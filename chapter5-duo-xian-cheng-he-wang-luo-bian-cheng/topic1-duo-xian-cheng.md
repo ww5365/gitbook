@@ -43,6 +43,15 @@ pthread_t tids[10];
 参数：
 第一个参数为指向线程标识符的指针。
 第二个参数用来设置线程属性。
+
+>>
+pthread_attr_t a; //线程属性
+pthread_attr_init(&a);  //初始化线程属性
+pthread_attr_setdetachstate(&a, PTHREAD_CREATE_DETACHED);//设置线程属性
+>>
+
+
+
 第三个参数是线程运行函数的地址。
 最后一个参数是运行函数的参数。
 
