@@ -36,7 +36,7 @@ pthread_t tids[10];
 
 ## pthread_create
 
-原型：`int pthread_create(pthread_t * restrict t, const pthread_attr_t *a, void*(*f)(void *), void * restrict fun_pram) `
+`int pthread_create(pthread_t * restrict t, const pthread_attr_t *a, void*(*f)(void *), void * restrict fun_pram) `
 
 返回值： 0 成功，否则出错
 
