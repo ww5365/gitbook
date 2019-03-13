@@ -36,24 +36,28 @@ pthread_t tids[10];
 
 ## pthread_create
 
-原型：`int pthread_create(pthread_t * restrict t, const pthread_attr_t *a, void*(*f)(void *)fun, void * restrict fun_pram) `
+原型：`int pthread_create(pthread_t * restrict t, const pthread_attr_t *a, void*(*f)(void *), void * restrict fun_pram) `
 
 返回值： 0 成功，否则出错
 
-参数：
+参数说明：
 第一个参数为指向线程标识符的指针。
+>pthread_t 类型的指针
+
 第二个参数用来设置线程属性。
 
->>
-pthread_attr_t a; //线程属性
-pthread_attr_init(&a);  //初始化线程属性
-pthread_attr_setdetachstate(&a, PTHREAD_CREATE_DETACHED);//设置线程属性
->>
-
+>pthread_attr_t a; //线程属性
+>pthread_attr_init(&a);  //初始化线程属性
+>pthread_attr_setdetachstate(&a, >PTHREAD_CREATE_DETACHED);//设置线程属性
 
 
 第三个参数是线程运行函数的地址。
+
+  >void* fun(void *)` : 使用桩函数的指针
+
 最后一个参数是运行函数的参数。
+
+
 
 
 实例：
