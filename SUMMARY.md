@@ -17,6 +17,7 @@
   * [第6章 函数](chapter2-c++-primer-note/di-liu-zhang-han-shu.md)
   * [第7章 类](chapter2-c++-primer-note/di-7-zhang-lei.md)
   * [第9章 顺序容器](chapter2-c++-primer-note/di-jiu-zhang-shun-xu-rong-qi.md)
+  * 第13章 拷贝控制
 * [Chapter3 - STL](chapter3-stl.md)
   * [c++ STL - list](chapter3-stl/stl-list.md)
   * [c++ STL - string](chapter3-stl/c++-stl-string.md)
