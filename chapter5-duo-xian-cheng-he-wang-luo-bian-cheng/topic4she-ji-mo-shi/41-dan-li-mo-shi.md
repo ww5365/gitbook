@@ -59,10 +59,10 @@ private:
 
 3、多线程的情况下，需要mutex保护？double check？
    
-   自己的理解：如果需要修改单例对象管理的数据，多线的情况下，还是要考虑mutex保护；
+   自己的理解：如果需要修改单例对象管理的数据，多线程的情况下，还是要考虑mutex保护；
 
 
-4、需要另一个资源管理的类对象，来实现数据的管理? 比如两个实现类中：m_data_center_pimpl ，m_resources_manager 成员变量。
+4、需要另一个资源管理的类对象，来实现数据的管理? 比如两个实现类中：m_data_center_impl ，m_resources_manager 成员变量。
 
 
 实现实例二：
