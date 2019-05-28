@@ -17,7 +17,7 @@ pthread_exit
 
 pthread_self
 
-//加锁
+//加锁使用
 pthread_mutex_t
 pthread_mutex_init
 pthread_mutex_destroy
