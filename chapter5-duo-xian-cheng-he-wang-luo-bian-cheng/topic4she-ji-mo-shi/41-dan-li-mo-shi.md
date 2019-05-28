@@ -64,6 +64,9 @@ private:
 3、多线程的情况下，需要mutex保护？double check？
    
    自己的理解：如果需要修改单例对象管理的数据，多线程的情况下，还是要考虑mutex保护；
+   
+   为什么需要double check？m_is_instance_created 如果不进行第二次check会有什么问题吗？
+   
 
 4、智能指针的使用：
    
