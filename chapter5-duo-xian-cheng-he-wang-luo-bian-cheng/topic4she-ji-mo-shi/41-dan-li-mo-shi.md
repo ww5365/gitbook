@@ -69,7 +69,7 @@ private:
    
    boost::scoped_ptr<TYPE> s_ptr
    等价于:
-   std::unique_ptr<TYPE> 
+   std::unique_ptr<TYPE> s_ptr
    
    //智能独占指针
    
