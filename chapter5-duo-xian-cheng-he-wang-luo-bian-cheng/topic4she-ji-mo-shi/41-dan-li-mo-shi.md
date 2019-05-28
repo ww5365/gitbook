@@ -71,7 +71,7 @@ private:
    等价于:
    std::unique_ptr<TYPE> 
    
-   //独占智能指针
+   //智能独占指针
    
    
    ```
