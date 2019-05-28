@@ -34,6 +34,7 @@
   * [topic3 - \_\_thread关键字](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic3-thread-guan-jian-zi.md)
   * [topic4-设计模式](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic4she-ji-mo-shi.md)
     * [4\_1\_单例模式](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic4she-ji-mo-shi/41-dan-li-mo-shi.md)
+  * [topic10-多线程实战](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic10duo-xian-cheng-shi-zhan.md)
 * [Chapter6 - 算法和经典代码赏析](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi.md)
   * [topic 1 - Trie树及实现](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi/topic-1-trieshu-ji-shi-xian.md)
 
