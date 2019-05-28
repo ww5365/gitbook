@@ -50,6 +50,8 @@ private:
     DataCenter& operator=(const DataCenter&);
 };
 
+```
+
 
 上面的实现思考点：
 
@@ -61,6 +63,18 @@ private:
    
    自己的理解：如果需要修改单例对象管理的数据，多线程的情况下，还是要考虑mutex保护；
 
+4、智能指针的使用：
+   
+   ```c++
+   
+   boost::scoped_ptr<TYPE> s_ptr
+   等价于:
+   std::unique_ptr<TYPE> 
+   
+   //独占智能指针
+   
+   
+   ```
 
 4、需要另一个资源管理的类对象，来实现数据的管理? 比如两个实现类中：m_data_center_impl ，m_resources_manager 成员变量。
 
