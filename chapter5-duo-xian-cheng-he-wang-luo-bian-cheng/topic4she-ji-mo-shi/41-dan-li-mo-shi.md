@@ -72,7 +72,13 @@ private:
 
 ```c++
 
+static DataCenter& Instance(){
 
+  static DataCenter data_center;
+  m_instance = &data_center;
+  
+  return *m_instance;
+}
 
   
 ```  
