@@ -23,8 +23,8 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 二、解决方式
 将“非内联的”“独立函数”的定义实现从.h文件挪到.cpp文件，然后在.h文件中对该函数进行声明。
---------------------- 
-作者：图形跟班 
-来源：CSDN 
-原文：https://blog.csdn.net/libing_zeng/article/details/78362000 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+>>经验总结
+>>1、非内联的独立函数，注意到了；
+>>2、最佳实践，在头文件中声明函数，在.cpp文件中实现函数。避免头文件被重复包含之后，导致非内联独立函数被重复定义。
