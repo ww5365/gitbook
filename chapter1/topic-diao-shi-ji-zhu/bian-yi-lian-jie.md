@@ -1,9 +1,10 @@
 # 编译链接阶段 
 
 ##case1: duplicate symbol for architecture x86_64
+
 一、问题原因
 ld: 1 duplicate symbol for architecture x86_64 
-出现错误的原因是：重复定义。
+出现错误的原因是：**重复定义**。
 
 完整的报错信息： 
 ld: 1 duplicate symbol for architecture x86_64 
