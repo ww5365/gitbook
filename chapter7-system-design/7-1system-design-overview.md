@@ -2,10 +2,8 @@
 
 
 
-```
-Design a photo reference counting system at fb scale
+>> Design a photo reference counting system at fb scale
 
-```
 
 这个题是我们在《系统设计班》第一节twitter的那节课讲过的内容。
 
