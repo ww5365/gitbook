@@ -39,4 +39,6 @@
   * [topic10-多线程实战](chapter5-duo-xian-cheng-he-wang-luo-bian-cheng/topic10duo-xian-cheng-shi-zhan.md)
 * [Chapter6 - 算法和经典代码赏析](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi.md)
   * [topic 1 - Trie树及实现](chapter6-suan-fa-he-jing-dian-dai-ma-shang-xi/topic-1-trieshu-ji-shi-xian.md)
+* [Chapter7 - System design](chapter7-system-design.md)
+  * [7-1\_system design overview](chapter7-system-design/7-1system-design-overview.md)
 
